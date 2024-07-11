@@ -1,4 +1,5 @@
 import { Rating } from "@/components/Rating";
+import { Status } from "@/components/Status";
 import { getProductDetails } from "@/lib/data";
 
 import Image from "next/image";
@@ -25,20 +26,21 @@ export default async function Page({
     shippingInformation,
     description,
     returnPolicy,
-    category,
+    availabilityStatus,
     tags,
   } = productDetails;
 
   return (
     <main className="container mx-auto py-10 px-4 sm:px-5 sm:flex">
-      <div>
+      <div className="relative">
         <Image
           src={thumbnail}
           alt={title}
           width={400}
           height={400}
-          className="border mb-2 rounded-xl"
+          className="border  mb-2 rounded-xl"
         />
+        <Status className="absolute top-4 right-4" status={availabilityStatus} />
         <div className="flex gap-2">
           {images.map((img) => (
             <Image
@@ -87,6 +89,10 @@ export default async function Page({
             <tr>
               <th scope="row">Shipping</th>
               <td>{shippingInformation}</td>
+            </tr>
+            <tr>
+              <th scope="row">Return policy</th>
+              <td>{returnPolicy}</td>
             </tr>
           </tbody>
         </table>
