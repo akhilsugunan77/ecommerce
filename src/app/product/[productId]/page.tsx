@@ -28,6 +28,7 @@ export default async function Page({
     returnPolicy,
     availabilityStatus,
     tags,
+    category,
   } = productDetails;
 
   return (
@@ -40,7 +41,10 @@ export default async function Page({
           height={400}
           className="border  mb-2 rounded-xl"
         />
-        <Status className="absolute top-4 right-4" status={availabilityStatus} />
+        <Status
+          className="absolute top-4 right-4"
+          status={availabilityStatus}
+        />
         <div className="flex gap-2">
           {images.map((img) => (
             <Image
@@ -64,6 +68,9 @@ export default async function Page({
               {tag}
             </span>
           ))}
+          <span className="border rounded-lg text-xs px-2 py-1">
+            {category}
+          </span>
         </div>
         <p className="text-2xl font-medium my-4">${price}</p>
         <table>
