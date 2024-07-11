@@ -1,4 +1,4 @@
-type Reviews = {
+export type Reviews = {
   rating: number;
   comment: string;
   date: Date;
@@ -6,7 +6,7 @@ type Reviews = {
   reviewerEmail: string;
 }[];
 
-type Product = {
+export type Product = {
   id: number;
   title: string;
   description: string;
