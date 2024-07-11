@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Star } from "./Icon";
 import Link from "next/link";
 import { Product } from "@/lib/type";
+import { Rating } from "./Rating";
 
 type ProductCardProps = Pick<
   Product,
@@ -24,11 +25,7 @@ export function ProductCard(props: ProductCardProps) {
       />
       <div className="px-6 pb-4 pt-2 flex flex-col justify-between grow">
         <h4 className="text-sm font-semibold mb-1">{title}</h4>
-        <div className="flex gap-0.5 mb-2">
-          {Array.from({ length: Math.floor(rating) }).map((_, i) => (
-            <Star key={i} />
-          ))}
-        </div>
+        <Rating rating={rating} />
         <span className="text-xl font-medium">${price}</span>
       </div>
     </Link>
