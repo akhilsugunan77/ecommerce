@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Star } from "./Icon";
 import Link from "next/link";
+import { Product } from "@/lib/type";
 
 type ProductCardProps = Pick<
   Product,
