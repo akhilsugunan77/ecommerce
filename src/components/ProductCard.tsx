@@ -14,7 +14,7 @@ export function ProductCard(props: ProductCardProps) {
   return (
     <Link
       href={`/product/${id}`}
-      className="rounded-3xl overflow-hidden bg-white shadow-sm grow flex flex-col"
+      className="rounded-3xl overflow-hidden bg-white border  grow flex flex-col"
     >
       <Image
         src={thumbnail}
