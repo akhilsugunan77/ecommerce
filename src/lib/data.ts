@@ -1,6 +1,8 @@
 import { Product } from "./type";
 
-const DATA_PATH = "http://localhost:3000/data/products.json";
+const DATA_PATH = process.env.BASE_PATH
+  ? `${process.env.BASE_PATH}/data/products.json`
+  : "http://localhost:3000/data/products.json";
 
 export async function getProducts() {
   const response = await fetch(DATA_PATH);
